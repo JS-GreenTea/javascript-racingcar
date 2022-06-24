@@ -1,0 +1,134 @@
+:root {
+  --main-bg-color: #00BCD4;
+  --sub-bg-color: #80DEEA;
+  --main-text-color: rgba(0, 0, 0, 0.87);
+  --sub-text-color: #8B8B8B;
+
+  --extra-large-font-size: 34px;
+  --large-font-size: 20px;
+  --medium-font-size: 16px;
+  --small-font-size: 12px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--medium-font-size);
+  letter-spacing: 0.5px;
+  color: var(--main-text-color);
+}
+
+h4 {
+  font-weight: 600;
+  font-size: var(--extra-large-font-size);
+  color: var(--main-text-color);
+}
+
+h6 {
+  margin: 30px 0px;
+  font-weight: 600;
+  font-size: var(--large-font-size);
+  letter-spacing: 0.15px;
+  color: var(--main-text-color);
+}
+
+form {
+  padding: 5px;
+}
+
+label {
+  display: block;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 8px 8px;
+  margin-right: 10px;
+  width: 360px;
+  height: 20px;
+  border: 1px solid #B4B4B4;
+  border-radius: 4px;
+}
+
+input::placeholder {
+  font-weight: 400;
+  font-size: var(--medium-font-size);
+  letter-spacing: 0.5px;
+  color: var(--sub-text-color);
+}
+
+caption {
+  font-weight: 300;
+  font-size: var(--small-font-size);
+  color: var(--main-text-color);
+}
+
+button {
+  width: fit-content;
+  padding: 6px 20px;
+  height: 36px;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--main-bg-color);
+  border-radius: 4px;
+  border-style: none;
+  letter-spacing: 1.25px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--sub-bg-color);
+}
+
+table {
+  border-spacing: 8px;
+}
+
+th {
+  height: 36px;
+  min-width: 96px;
+  background-color: #F5F5F5;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+td {
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  margin-top: 56px;
+  width: 544px;
+  height: fit-content;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+#progress-view {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#result-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
