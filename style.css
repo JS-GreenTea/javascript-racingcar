@@ -37,10 +37,6 @@ h6 {
   color: var(--main-text-color);
 }
 
-form {
-  padding: 5px;
-}
-
 label {
   display: block;
   font-weight: 400;
@@ -106,6 +102,10 @@ td {
   font-size: 32px;
   text-align: center;
 
+}
+
+.padding-5 {
+  padding: 5px;
 }
 
 #app {
