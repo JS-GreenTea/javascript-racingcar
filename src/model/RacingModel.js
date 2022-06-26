@@ -3,12 +3,12 @@ class RacingModel {
   #trialCount;
 
   constructor() {
-    this.#racingCars = [];
+    this.#racingCars = {};
     this.#trialCount = 0;
   }
 
   get racingCars() {
-    return [...this.#racingCars];
+    return { ...this.#racingCars };
   }
 
   get trialCount() {
@@ -20,7 +20,7 @@ class RacingModel {
   }
 
   addCar(carName) {
-    this.#racingCars.push(carName);
+    this.#racingCars[carName] = 0;
   }
 
   reduceTrialCount() {
