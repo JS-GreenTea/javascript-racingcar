@@ -11,6 +11,10 @@ class RacingModel {
     return { ...this.#racingCars };
   }
 
+  get racingCarsName() {
+    return Object.keys(this.#racingCars);
+  }
+
   get trialCount() {
     return this.#trialCount;
   }
@@ -21,6 +25,10 @@ class RacingModel {
 
   addCar(carName) {
     this.#racingCars[carName] = 0;
+  }
+
+  increaseCarDistance(carName) {
+    this.#racingCars[carName] += 1;
   }
 
   reduceTrialCount() {
