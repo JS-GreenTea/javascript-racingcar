@@ -43,6 +43,11 @@ class RacingController {
   }
 
   trialCountSubmitHandler() {
+    if (this.racingModel.racingCarsName.length === 0) {
+      alert("자동차 이름을 먼저 입력해주세요.");
+      return;
+    }
+
     const trialCount = this.trialCountInputView.getInputValue();
     this.racingModel.trialCount = trialCount;
     this.startRacing();
