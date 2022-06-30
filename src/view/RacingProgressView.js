@@ -15,7 +15,7 @@ class RacingProgressView {
     return `
       <table>
       <thead>
-        ${thList.map((value) => `<th>${value}</th>`).join("")}
+        ${thList.map(value => `<th>${value}</th>`).join("")}
       </thead>
       <tbody>
       </tbody>
@@ -33,7 +33,7 @@ class RacingProgressView {
     <tr data-row=${row}>
       ${Array.from(
         { length: colSize },
-        (_, idx) => `<td data-col=${idx}></td>`
+        (_, idx) => `<td data-col=${idx}></td>`,
       ).join("")}
     </tr>
     `;

@@ -1,10 +1,13 @@
+import { pickRandomNumInRange } from "../util.js";
+import config from "../config.js";
+
 class RacingController {
   constructor(
     carNameInputView,
     trialCountInputView,
     racingProgressView,
     resultView,
-    racingModel
+    racingModel,
   ) {
     this.carNameInputView = carNameInputView;
     this.trialCountInputView = trialCountInputView;
@@ -17,24 +20,24 @@ class RacingController {
   bindClickEvent() {
     this.carNameInputView.submitBtn.addEventListener(
       "click",
-      this.carNameSubmitHandler.bind(this)
+      this.carNameSubmitHandler.bind(this),
     );
     this.trialCountInputView.submitBtn.addEventListener(
       "click",
-      this.trialCountSubmitHandler.bind(this)
+      this.trialCountSubmitHandler.bind(this),
     );
     this.resultView.target.addEventListener(
       "click",
-      this.restartBtnHandler.bind(this)
+      this.restartBtnHandler.bind(this),
     );
   }
 
-  carNameSubmitHandler(event) {
+  carNameSubmitHandler() {
     const carNameList = this.carNameInputView.getInputValue().split(", ");
-    carNameList.forEach((carName) => this.racingModel.addCar(carName));
+    carNameList.forEach(carName => this.racingModel.addCar(carName));
   }
 
-  trialCountSubmitHandler(event) {
+  trialCountSubmitHandler() {
     const trialCount = this.trialCountInputView.getInputValue();
     this.racingModel.trialCount = trialCount;
     this.startRacing();
@@ -51,8 +54,8 @@ class RacingController {
   startRacing() {
     this.renderTable();
 
-    const trialCount = this.racingModel.trialCount;
-    let racingCars = this.racingModel.racingCars;
+    const { trialCount } = this.racingModel;
+    let { racingCars } = this.racingModel;
 
     for (let i = 0; i < trialCount; i += 1) {
       racingCars = this.racingModel.racingCars;
@@ -63,30 +66,29 @@ class RacingController {
   }
 
   renderTable() {
-    const racingCarsName = this.racingModel.racingCarsName;
+    const { racingCarsName } = this.racingModel;
     this.racingProgressView.render(racingCarsName);
   }
 
   startRound(racingCars, round) {
     this.racingProgressView.addTableRow(round, Object.keys(racingCars).length);
     Object.keys(racingCars).forEach((carName, idx) => {
-      if (this.isCarRun()) {
-        this.racingModel.increaseCarDistance(carName);
-        this.racingProgressView.updateTd(racingCars[carName], idx, "⬇️️");
-      }
+      this.moveCar(carName, racingCars[carName], idx);
     });
   }
 
-  isCarRun() {
-    return Math.floor(Math.random() * 10) >= 4 ? true : false;
+  moveCar(carName, distance, carIdx) {
+    if (pickRandomNumInRange(0, 10) >= config.moveCondition) {
+      this.racingModel.increaseCarDistance(carName);
+      this.racingProgressView.updateTd(distance, carIdx, "⬇️️");
+    }
   }
 
   checkWinners(racingCars) {
-    console.log(racingCars);
     const winDistance = Math.max(...Object.values(racingCars));
     const result = Object.entries(racingCars)
-      .filter(([_, distance]) => distance === winDistance)
-      .map(([carName, _]) => carName);
+      .filter(([, distance]) => distance === winDistance)
+      .map(([carName]) => carName);
     return result;
   }
 }

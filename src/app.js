@@ -11,10 +11,10 @@ const racingProgressView = new RacingProgressView();
 const resultView = new ResultView();
 const racingModel = new RacingModel();
 
-new RacingController(
+RacingController(
   carNameInputView,
   trialCountInputView,
   racingProgressView,
   resultView,
-  racingModel
+  racingModel,
 );
