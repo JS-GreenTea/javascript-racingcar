@@ -1,3 +1,4 @@
+import { isLengthLessThen } from "../validation.js";
 import { pickRandomNumInRange } from "../util.js";
 import config from "../config.js";
 
@@ -34,6 +35,10 @@ class RacingController {
 
   carNameSubmitHandler() {
     const carNameList = this.carNameInputView.getInputValue().split(", ");
+    if (!isLengthLessThen(carNameList, 5)) {
+      alert("5자 이하의 이름을 입력해주세요.");
+      return;
+    }
     carNameList.forEach(carName => this.racingModel.addCar(carName));
   }
 
@@ -94,5 +99,3 @@ class RacingController {
 }
 
 export default RacingController;
-
-// east, west, all, south, north

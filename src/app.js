@@ -10,8 +10,7 @@ const trialCountInputView = new TrialCountInputView();
 const racingProgressView = new RacingProgressView();
 const resultView = new ResultView();
 const racingModel = new RacingModel();
-
-RacingController(
+const racingController = new RacingController(
   carNameInputView,
   trialCountInputView,
   racingProgressView,
