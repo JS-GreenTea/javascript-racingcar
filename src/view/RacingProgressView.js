@@ -3,6 +3,10 @@ class RacingProgressView {
     this.target = document.querySelector("#racing-progress-view");
   }
 
+  init() {
+    this.target.innerHTML = "";
+  }
+
   render(data) {
     this.target.innerHTML = this.templateHTML(data);
   }

@@ -3,6 +3,10 @@ class RacingModel {
   #trialCount;
 
   constructor() {
+    this.init();
+  }
+
+  init() {
     this.#racingCars = {};
     this.#trialCount = 0;
   }
