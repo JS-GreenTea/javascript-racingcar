@@ -4,6 +4,10 @@ class CarNameInputView {
     this.submitBtn = document.querySelector("#car-name-submit-btn");
   }
 
+  init() {
+    this.inputElement.value = "";
+  }
+
   getInputValue() {
     return this.inputElement.value;
   }

@@ -56,6 +56,8 @@ class RacingController {
   restartBtnHandler(event) {
     if (event.target.id === "racing-restart-btn") {
       this.racingModel.init();
+      this.carNameInputView.init();
+      this.trialCountInputView.init();
       this.racingProgressView.init();
       this.resultView.init();
     }
