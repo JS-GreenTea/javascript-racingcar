@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>🏎️ 자동차 경주 게임🏁</title>
+  <link rel="stylesheet" href="./dist/css/index.css">
+</head>
+
+<body>
+  <div id="app">
+    <h1 class="game-title">🏎️ 자동차 경주 게임🏁</h1>
+    <div class="input-layer">
+      <p>5자 이하의 자동차 이름을 콤마로 구분하여 입력해주세요.</p>
+      <div class="input-layer-box">
+      <input id="car-names" type="text" placeholder="east, west, south, north, all" />
+      <button id="car-button">확인</button>
+    </div>
+    </div>
+    <div class="input-layer">
+      <p>시도할 횟수를 입력해주세요.</p>
+      <div class="input-layer-box">
+      <input id='play-count'type="text" placeholder="10" />
+      <button id="play-button">확인</button>
+      </div>
+    </div>
+    <div id="game">
+
+    </div>
+    <div class="result-container">
+      <h2 id="winner"></h2>
+      <button id="restart-button">다시 시작하기</button>
+    </div>
+  </div>
+</body>
+<script type="module" src="./src/index.js"></script>
+
+</html>
