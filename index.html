@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>자동차 경주 게임</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./style.css"
 
-<head>
-  <meta charset="UTF-8" />
-  <title>🏎️ 자동차 경주 게임</title>
-</head>
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-  <div id="app">
-  </div>
-</body>
+    <body>
+      <div id="title">🏎 자동차 경주 게임 🏁</div>
+      <div class="input">
+        <form>
+          <div id="carNameInputText">
+            5자 이하의 자동차 이름을 콤마로 구분하여 입력해주세요.
+            <br> 예시) EAST, WEST, SOUTH, NORTH
+          </div>
+          <div class="inputValue">
+            <input
+              id="carNameListInput"
+              type="text"
+              name="carNameListInput"
+              placeholder="자동차 이름"
+              size="30"
+            />
+            <button
+              id="carNameSubmit"
+              type="button"
+              class="submitButton"
+              name="carNameListSubmit"
+              >
+            확인</button>
+            
+          </div>
+        </form>
+        <form>
+          <div id="raceCountInputText">시도할 횟수를 입력해주세요.</div>
+          <div class="inputValue">
+            <input id="raceCountInput" type="text" name="raceCountInput" placeholder="시도 횟수" />
+            <button
+              id="raceCountSubmit"
+              type="button"
+              class="submitButton"
+              name="raceCountInputSubmit">
+              확인</button>
+          </div>
+        </form>
+      </div>
 
+      <div class="racingResult">
+        </div>
+      </div>
+
+      <div class="result"></div>
+      <form>
+        <button id="restartBtn" type="submit">다시 시작하기</button>
+      </form>
+      <script type="module" src="./src/index.js"></script>
+    </body>
 </html>
