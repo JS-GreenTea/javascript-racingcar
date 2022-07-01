@@ -70,10 +70,9 @@ class RacingController {
     let { racingCars } = this.racingModel;
 
     for (let i = 0; i < trialCount; i += 1) {
-      racingCars = this.racingModel.racingCars;
       this.startRound(racingCars, i);
+      racingCars = this.racingModel.racingCars;
     }
-    racingCars = this.racingModel.racingCars;
     this.resultView.render(this.checkWinners(racingCars));
   }
 
