@@ -13,7 +13,7 @@ class RacingProgressView {
 
   templateHTML(thList) {
     return `
-      <table>
+      <table id="racing-progress-table">
       <thead>
         ${thList.map(value => `<th>${value}</th>`).join("")}
       </thead>

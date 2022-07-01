@@ -13,7 +13,7 @@ class ResultView {
 
   templateHTML(data) {
     return `
-      <h6>🏆 최종 우승자: ${data.join(", ")} 🏆</h6>
+      <h6 id="result">🏆 최종 우승자: ${data.join(", ")} 🏆</h6>
       <button id="racing-restart-btn">다시 시작하기</button>
     `;
   }
