@@ -2,6 +2,15 @@ import RacingCar from "./racingcar.js";
 import judge from "./judge.js";
 
 export default class RacingCarGame {
+  makeRacingCars(carNameListInput, raceCountInput) {
+    this.carNameList = this.splitCarNameListInput(carNameListInput);
+    return this.carNameList.map((carName, index) => {
+      const racingCar = new RacingCar(index, carName, raceCountInput);
+      racingCar.makeEachCarDiv(carName);
+      return racingCar;
+    });
+  }
+
   splitCarNameListInput(carNameListInput) {
     this.carNameList = String(carNameListInput).split(",");
     return this.carNameList;
