@@ -27,4 +27,13 @@ export default class RacingCarGame {
 
     return true;
   }
+
+  isRaceCountInputValid(raceCountInput) {
+    if (!/^\d+$/.test(raceCountInput)) {
+      alert("시도할 횟수는 숫자로만 입력해주세요.");
+      location.reload();
+      return false;
+    }
+    return true;
+  }
 }
